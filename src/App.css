@@ -1,0 +1,334 @@
+@font-face {
+  font-family: "Digital";
+  src: local("Digital"), url(./digital-7.regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Mignone";
+  src: local("Mignone"), url(./Mignone.ttf) format("truetype");
+}
+
+.pomodoro-clock {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+.wall {
+  background-color: rgb(179, 179, 179);
+  border-bottom: 2px solid black;
+  position: absolute;
+  z-index: -3;
+  height: 60vh;
+  width: 100%;
+  font-family: Mignone;
+  text-align: center;
+  font-size: 4.3rem; 
+}
+
+/* Door column start */
+
+.first-block {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: auto;
+  max-height: 60vh;
+}
+
+.door-frame {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  max-width: 15.1vw;
+  border: 10px solid rgb(102, 51, 0);
+  border-bottom: 2px solid black;
+}
+
+.minionbido {
+  background-color: black;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  max-width: 14.4vw;
+  height: auto;
+}
+
+
+/* Clock column CSS start */
+
+.second-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: end;
+  height: 100vh;
+}
+
+.clock-body {
+  display: flex;
+  align-items: flex-end;
+  background-color: rgb(2, 146, 183);
+  position: fixed;
+  top: 10vh;
+  height: auto;
+  width: 100%;
+  max-width: 34vw;
+  padding: 0 3vw 2vh 0.7vw !important;
+  border: 3px solid black;
+  border-radius: 80px 250px 10px 10px;
+  -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.75);
+}
+
+.clock-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#timer-label {
+  font-size: 3vw;
+  font-weight: bold;
+}
+
+#time-left {
+  background-color: black;
+  color: rgb(237, 204, 94);
+  border: 3px solid black;
+  border-radius: 10px;
+  font-family: Digital;
+  text-align: center;
+  font-size: 7vw;
+  line-height: 6vw;
+  height: auto;
+  width: 100%;
+  max-width: 22vw;
+}
+
+#reset {
+  margin-top: 10px;
+}
+
+.minionclock {
+  position: fixed;
+  bottom: 20px;
+  width: auto;
+  max-width: 36vw;
+  height: auto;
+  max-height: 59vh;
+}
+
+/* Controller column CSS start */
+
+.controller-block {  
+  display: flex;
+  align-items: center;
+  background-color: rgb(2, 146, 183);
+  position: fixed;
+  bottom: 58vh;
+  right: 17vw;
+  height: auto;
+  width: 100%;
+  max-width: 13vw;
+  border: 3px solid black;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.75);
+}
+
+.controller {
+  padding: 10px !important;
+}
+
+#break-label, #session-label {
+  text-align: center;
+  font-size: 1.4vw;
+  font-weight: bold;
+}
+
+#break-length, #session-length { 
+  color: rgb(237, 204, 94); 
+  font-family: Digital;
+  font-size: 2.7vw;
+  margin: 0 15px;
+}
+
+.minioncontroller {
+  position: fixed;
+  bottom: 20vh;
+  right: 2vw;
+  width: auto;
+  max-width: 19vw;
+  height: auto;
+  max-height: 48vh;
+}
+
+/* General CSS start */
+
+.btn {
+  padding: 0;
+}
+
+.btn:hover {
+  color: white;
+  transition: linear 0.2s;
+}
+
+.btn:focus {
+  box-shadow: none !important;
+}
+
+.row,
+.col,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-10,
+.col-12 {
+  margin: 0;
+  padding: 0;
+}
+
+/* Media query start */
+
+@media (max-width: 1500px) {
+  .fas {
+    font-size: 38px;
+  }
+
+  .minionbido {
+    max-width: 14vw;
+  }
+
+  .controller-block {
+    bottom: 62vh;
+    right: 8vw;
+    max-width: 18vw;
+  }
+}
+
+@media (max-width: 1199px) {
+
+  .minionbido {
+    max-width: 13.7vw;
+  }
+
+  .clock-body {
+    top: 12vh;
+    max-width: 42vw;
+    padding: 0 5vw 2vh 0.7vw !important;
+  }
+
+  #timer-label {
+    font-size: 3.5vw;
+  }
+
+  #time-left {
+    font-size: 8vw;
+    line-height: 7vw;
+    max-width: 25vw;
+  }
+
+  .play-reset {
+    margin-top: 15px !important;
+  }
+
+  .minionclock {
+    bottom: 20px;
+    max-width: 45vw;
+    max-height: 50vh;
+  }
+
+  .controller-block {
+    position: absolute;
+    bottom: 53vh;
+    right: 37vw;
+    max-width: 50vw;
+  }
+
+  #break-label, #session-label {
+    font-size: 1.7vw;
+  }
+
+  #break-length, #session-length {
+    font-size: 2.9vw;
+    margin: 0 15px;
+  }
+
+  .minioncontroller {
+    right: 7vw;
+    max-width: 22vw;
+  }
+  
+}
+
+@media (max-width: 991px) {
+  #timer-label {
+    font-size: 3.8vw;
+  }
+
+  .minionclock {
+    right: 32vw;
+  }
+  
+  .controller-block {
+    bottom: 47.5vh;
+    right: 33vw;
+  }
+
+  #break-label, #session-label {
+    font-size: 2.4vw;
+  }
+
+  #break-length, #session-length {
+    font-size: 3.5vw;
+  }
+
+}
+
+@media (max-width: 900px) {
+
+  .minionbido {
+    max-width: 13.2vw;
+  }
+
+  .wall {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 7vw;
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 767px) {
+  #timer-label {
+    font-size: 4.1vw;
+  }
+
+  .clock-body {
+    top: 10vh;
+  }
+  
+  .controller-block {
+    bottom: 42vh;
+    right: 41vw;
+    max-width: 25vw;
+  }
+
+  #break-label, #session-label {
+    font-size: 2.7vw;
+  }
+
+  #break-length, #session-length {
+    font-size: 4vw;
+    margin: 0 10px;
+  }
+
+}
+
